@@ -101,7 +101,7 @@ function SlidingCard({ card, index, progress, totalCards }: any) {
         
         {/* Card Heading */}
         <div className="px-8 md:px-16 w-full">
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight uppercase text-white">
+            <h2 className="text-4xl md:text-6xl font-normal tracking-tight uppercase text-white">
               {card.title}
             </h2>
         </div>

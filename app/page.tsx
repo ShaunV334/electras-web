@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { X, Instagram, Linkedin } from "lucide-react";
 import { RaspberryPiModel } from "./components/RaspberryPiModel";
-import { CardStack } from "./components/CardStack";
+import { TabbedGallery } from "./components/TabbedGallery";
 import dynamic from "next/dynamic";
 
 const MagazineFlipbook = dynamic(() => import("./components/MagazineFlipbook"), {
@@ -139,12 +139,12 @@ export default function Home() {
             }}
             className="flex justify-between items-start w-full px-6 py-1 md:px-12 md:py-1 z-10 border-b border-white/10"
           >
-            <div className="text-xl font-medium tracking-tight">
-              <img src="logo.png" alt="Electras" className="w-10 h-10 mt-5" />
+            <div className="text-xl font-normal tracking-tight">
+              <img src="logo.svg" alt="Electras" className="w-10 h-10 mt-5" />
             </div>
 
             <div className="hidden md:flex flex-col py-4 text-sm text-gray-400 gap-1 text-right">
-              <span className="text-white font-medium">Department of Electronics and Computer Engineering</span>
+              <span className="text-white font-normal">Department of Electronics and Computer Engineering</span>
               <span>SJCET, Palai</span>
             </div>
           </motion.nav>
@@ -160,7 +160,7 @@ export default function Home() {
               style={{ y: yText }}
               className="flex-1 flex flex-col justify-center px-6 md:px-12 py-10 md:py-0"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-medium leading-[1.1] tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-normal leading-[1.1] tracking-tight">
                 Bridging the Gap
                 <br />
                 Between Software and
@@ -196,102 +196,141 @@ export default function Home() {
           >
             {/* Akihiko-style edge-to-edge typography 
             <Image src="/logo.png" alt="Electras Logo" width={800} height={800} className="h-[35vw] w-auto object-contain shrink-0 -mr-[3vw] -mb-[4vw]" /> */}
-            <h2 className="text-[26vw] leading-[0.80] font-bold tracking-tighter text-white whitespace-nowrap flex items-start m-0 p-0">
+            <h2 className="text-[26vw] leading-[0.80] font-semibold tracking-tighter text-white whitespace-nowrap flex items-start m-0 p-0">
               Electras
             </h2>
           </motion.div>
         </section>
 
-        {/* Welcome Section */}
-        <div className="min-h-screen bg-black text-white px-4 md:p-8 pt-24 border-t border-white/10 flex flex-col items-center">
-          <div className="max-w-4xl mx-auto text-center pt-12 md:pt-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-0 md:px-4 text-left">
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                className="p-6 md:p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm"
-              >
-                <h3 className="text-xl sm:text-2xl md:text-4xl font-medium mb-4 tracking-tight">Vision</h3>
-                <p className="text-sm sm:text-base md:text-xl text-gray-400 leading-relaxed">
-                  Develop into a centre of excellence in Electronics and Computer Engineering by producing technically competent professionals catering to the needs for Industry, Academia and Society.
+        {/* About Section */}
+        <section className="w-full bg-white text-black py-20 px-6 md:px-12 lg:px-24">
+          <div className="max-w-7xl mx-auto flex flex-col pt-8">
+            <motion.h1 
+               initial={{ y: 50, opacity: 0 }}
+               whileInView={{ y: 0, opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, ease: "easeOut" }}
+               className="text-[14vw] sm:text-[12vw] md:text-[150px] lg:text-[180px] font-semibold leading-none tracking-tighter mb-12 md:mb-20">
+              About us
+            </motion.h1>
+
+            {/* Electras */}
+            <motion.div 
+               initial={{ y: 50, opacity: 0 }}
+               whileInView={{ y: 0, opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
+              <div className="md:col-span-4">
+                <h2 className="text-3xl md:text-4xl tracking-tight font-normal">Electras</h2>
+              </div>
+              <div className="md:col-span-8">
+                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-3xl font-normal">
+                  <strong className="text-black font-semibold">ELECTRAS is a dynamic student organization</strong> driving innovation and leadership in Electronics and Computer Science Engineering. Our vision is to build a powerhouse community of engineers who challenge limits, redefine technology, and shape a smarter, more connected future. At ELECTRAS, creativity meets expertise. <strong className="text-black font-semibold">We empower students to transform ideas into reality through hands-on projects, transformative workshops, impactful research, and collaborations with industry leaders.</strong> By bridging theory and practice, we prepare our members to become innovators who lead change and create lasting impact. Rooted in collaboration, curiosity, and excellence, ELECTRAS nurtures a new generation of problem-solvers ready to tackle global challenges with sustainable, socially responsible, and forward-thinking solutions. <strong className="text-black font-semibold">ELECTRAS — where ambition, innovation, and engineering excellence converge to define tomorrow.</strong>
                 </p>
-              </motion.div>
-              <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="p-6 md:p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm"
-              >
-                <h3 className="text-xl sm:text-2xl md:text-4xl font-medium mb-4 tracking-tight">Mission</h3>
-                <p className="text-sm sm:text-base md:text-xl text-gray-400 leading-relaxed">
-                  To pursue continuous improvement in learning, creativity and innovation among both faculty and students by enhanced infrastructure, state-of-the art laboratories and a unique learning environment. To inculcate in both faculty and students technical and entrepreneurial skills by professional activities to create socially relevant and sustainable solutions in the electronics and computer domain.
+              </div>
+            </motion.div>
+
+            {/* Electronics & Computer Engineering */}
+            <motion.div 
+               initial={{ y: 50, opacity: 0 }}
+               whileInView={{ y: 0, opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
+              <div className="md:col-span-4">
+                <h2 className="text-3xl md:text-4xl tracking-tight leading-tight font-normal">Electronics &<br/>Computer<br/>Engineering</h2>
+              </div>
+              <div className="md:col-span-8">
+                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-3xl font-normal">
+                  Electronics and Computer Engineering is an integrated discipline that bridges the worlds of hardware and software, <strong className="text-black font-semibold">preparing students to meet the evolving demands of modern technology industries.</strong> By merging these two dynamic fields, the program offers a strong foundation in both electronics and computing, enabling students to develop versatile skills and a deep understanding of cutting-edge technologies. <strong className="text-black font-semibold">This cross-disciplinary approach empowers aspiring engineers</strong> to pursue diverse career paths across sectors—ranging from core electronics to software development and emerging tech innovations. The result is a new generation of multi-skilled, forward-thinking professionals equipped to design intelligent systems, drive innovation, and shape the future of technology with creativity and precision.
                 </p>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
+
+            {/* What we represent */}
+            <motion.div 
+               initial={{ y: 50, opacity: 0 }}
+               whileInView={{ y: 0, opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
+              <div className="md:col-span-6">
+                <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight">What we represent</h2>
+              </div>
+              <div className="md:col-span-6 flex items-start md:items-end">
+                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-xl font-normal">
+                  We are committed to adhering to our vision and mission, which serve as guiding principles that illuminate our path. These core values not only ground us but also instill a profound sense of purpose in our endeavors, driving us to achieve excellence in all that we do.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Vision and Mission Cards with Cloud Background */}
+            <motion.div 
+               initial={{ y: 50, opacity: 0 }}
+               whileInView={{ y: 0, opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+               className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden min-h-[500px] flex items-center justify-center p-6 sm:p-10 md:p-16">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <Image 
+                  src="/clouds.png" 
+                  alt="Clouds background" 
+                  fill 
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Cards Container */}
+              <div className="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+                {/* Vision Card */}
+                <div className="bg-white/95 backdrop-blur-sm rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center transform transition duration-500 hover:scale-[1.02]">
+                  <h3 className="text-3xl font-semibold mb-6 pb-6 border-b border-black/10 w-full">Vision</h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed font-normal">
+                    Develop into a centre of excellence in Electronics and Computer Engineering by producing technically competent professionals catering to the needs for Industry, Academia and Society.
+                  </p>
+                </div>
+
+                {/* Mission Card */}
+                <div className="bg-white/95 backdrop-blur-sm rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center transform transition duration-500 hover:scale-[1.02]">
+                  <h3 className="text-3xl font-semibold mb-6 pb-6 border-b border-black/10 w-full">Mission</h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed font-normal">
+                    To pursue continuous improvement in learning, creativity and innovation among both faculty and students by enhanced infrastructure, state-of-the art laboratories and a unique learning environment. To inculcate in both faculty and students technical and entrepreneurial skills by professional activities to create socially relevant and sustainable solutions in the electronics and computer domain.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* About Sections */}
-        <div className="flex flex-col gap-12 md:gap-32 max-w-6xl mx-auto py-16 md:py-32 px-6 sm:px-8 md:px-12 border-t border-white/10">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium mb-6 tracking-tight">
-              About ELECTRAS
-            </h2>
-            <p className="text-base sm:text-lg md:text-2xl text-gray-400 leading-relaxed max-w-5xl">
-              ELECTRAS is a dynamic student organization driving innovation and leadership in Electronics and Computer Science Engineering. Our vision is to build a powerhouse community of engineers who challenge limits, redefine technology, and shape a smarter, more connected future. At ELECTRAS, creativity meets expertise. We empower students to transform ideas into reality through hands-on projects, transformative workshops, impactful research, and collaborations with industry leaders. By bridging theory and practice, we prepare our members to become innovators who lead change and create lasting impact. Rooted in collaboration, curiosity, and excellence, ELECTRAS nurtures a new generation of problem-solvers ready to tackle global challenges with sustainable, socially responsible, and forward-thinking solutions. ELECTRAS — where ambition, innovation, and engineering excellence converge to define tomorrow.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium mb-6 tracking-tight">
-              About Electronics and Computer Engineering
-            </h2>
-            <p className="text-base sm:text-lg md:text-2xl text-gray-400 leading-relaxed max-w-5xl">
-              Electronics and Computer Engineering is an integrated discipline that bridges the worlds of hardware and software, preparing students to meet the evolving demands of modern technology industries. By merging these two dynamic fields, the program offers a strong foundation in both electronics and computing, enabling students to develop versatile skills and a deep understanding of cutting-edge technologies. This cross-disciplinary approach empowers aspiring engineers to pursue diverse career paths across sectors—ranging from core electronics to software development and emerging tech innovations. The result is a new generation of multi-skilled, forward-thinking professionals equipped to design intelligent systems, drive innovation, and shape the future of technology with creativity and precision.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Vertical Sticky Card Stacks */}
-        <div className="w-full bg-black pt-16">
-          <CardStack items={stackSections} />
+        {/* Tabbed Gallery Section */}
+        <div className="w-full bg-white relative z-20">
+          <TabbedGallery items={stackSections} />
         </div>
 
         {/* Magazine Flipbook Integration */}
-        <section className="w-full flex justify-center items-center py-12 md:py-24 border-t border-white/10 relative z-20">
-          <div className="w-full text-center flex flex-col items-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 tracking-tight">
-              Our Publications
+        <section className="w-full py-12 md:py-24 relative z-20 px-6 md:px-12 lg:px-24">
+          <div className="w-full max-w-7xl mx-auto bg-[#205df5] rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col items-center shadow-lg">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-white mb-12 md:mb-16 tracking-tight text-center">
+              Explore our publications
             </h2>
 
             {/* Bookshelf Layout */}
-            <div className="w-full max-w-5xl mx-auto flex flex-col items-center mt-12">
-              <div className="w-full relative px-4 sm:px-12 flex justify-center md:justify-start pb-3 md:pb-5 items-end min-h-[250px] md:min-h-[350px]">
+            <div className="w-full max-w-5xl mx-auto flex flex-col items-center mb-4 md:mb-10">
+              <div className="w-full relative px-4 sm:px-12 flex justify-start pb-0 items-end min-h-[250px] md:min-h-[350px]">
 
                 {/* Magazine Thumbnail */}
                 <div
                   onClick={() => setIsMagazineOpen(true)}
-                  className="group relative w-40 h-56 md:w-56 md:h-80 cursor-pointer transform transition-all duration-500 hover:-translate-y-4 z-10 ml-0 md:ml-6"
+                  className="group relative w-40 h-56 md:w-56 md:h-80 cursor-pointer transform transition-all duration-500 hover:-translate-y-4 z-10 ml-4 md:ml-12 mb-4"
                   style={{ perspective: "1000px" }}
                 >
                   {/* Under-shadow */}
-                  <div className="absolute -bottom-3 left-2 right-2 h-4 bg-black/60 blur-md rounded-full transition-all duration-500 group-hover:scale-90 group-hover:opacity-40"></div>
+                  <div className="absolute -bottom-4 left-1 right-1 h-3 bg-black/60 blur-md rounded-full transition-all duration-500 group-hover:scale-90 group-hover:opacity-40"></div>
 
                   {/* Book Cover */}
-                  <div className="absolute inset-0 bg-neutral-900 rounded-sm overflow-hidden border border-white/10 shadow-[10px_5px_15px_rgba(0,0,0,0.6)] z-10 transition-transform duration-500 group-hover:rotate-y-[-5deg] flex items-center justify-center">
+                  <div className="absolute inset-0 bg-neutral-900 rounded-sm overflow-hidden shadow-[8px_4px_12px_rgba(0,0,0,0.4)] z-10 transition-transform duration-500 group-hover:rotate-y-[-5deg] flex items-center justify-center">
                     <Image
                       src="/magazine-cover-small-01.jpg"
                       alt="Electras Magazine Cover"
@@ -305,15 +344,15 @@ export default function Home() {
                   </div>
 
                   {/* Spine edge */}
-                  <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-r from-black/40 to-transparent z-20"></div>
+                  <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-r from-black/40 to-transparent z-20"></div>
                 </div>
 
                 {/* The Shelf */}
-                <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-b from-neutral-200 to-neutral-400 rounded-sm shadow-[0_15px_30px_rgba(0,0,0,0.9)] z-0">
+                <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-b from-white to-gray-300 rounded-sm z-0">
                   <div className="absolute inset-0 bg-white/20"></div>
                 </div>
-                {/* Deep wall shadow */}
-                <div className="absolute bottom-[-15px] left-8 right-8 h-8 bg-black/80 blur-xl z-[-1]"></div>
+                {/* Shelf Under shadow */}
+                <div className="absolute bottom-[-20px] left-6 right-6 h-10 bg-black/50 blur-xl z-[-1]"></div>
               </div>
             </div>
           </div>
@@ -347,44 +386,36 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Footer */}
-        <footer className="bg-black text-white border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
-              <div className="col-span-1 sm:col-span-2 md:col-span-2">
-                <h3 className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">ELECTRAS</h3>
-                <p className="text-gray-400 text-sm md:text-base">
-                  made with ❤️ by ER.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold mb-4 text-sm md:text-base tracking-wide uppercase text-gray-500">Navigation</h4>
-                <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                  <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-                  <li><Link href="#" className="hover:text-white transition-colors">About</Link></li>
-                  <li><Link href="#" className="hover:text-white transition-colors">Work</Link></li>
-                  <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold mb-4 text-sm md:text-base tracking-wide uppercase text-gray-500">Social</h4>
-                <ul className="space-y-2 text-gray-400 text-sm md:text-base">
-                  <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Dribbble</a></li>
-                </ul>
-              </div>
+        <footer className="bg-black text-white pt-16 overflow-hidden relative border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-start text-left">
+            {/* Logo */}
+            <div className="mb-6 md:mb-8">
+              <img src="/logo.svg" alt="Electras" className="w-12 h-12 md:w-14 md:h-14 opacity-90" />
+            </div>
+            
+            {/* Text */}
+            <div className="max-w-md mb-8">
+              <p className="text-[#a1a1aa] text-sm md:text-base leading-relaxed font-normal">
+                <strong className="text-white font-semibold">ELECTRAS</strong> is a vibrant student group focused on innovation in Electronics and Computer Science. Join us at <strong className="text-white font-semibold">ELECTRAS</strong>, where ambition and engineering excellence meet.
+              </p>
             </div>
 
-            <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-500 text-xs sm:text-sm">©2025 All rights reserved.</p>
-              <div className="flex flex-wrap justify-center gap-6 text-gray-500 text-xs sm:text-sm">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              </div>
+            {/* Social Icons */}
+            <div className="flex gap-4 mb-2 md:mb-4">
+              <a href="#" className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-[10px] md:rounded-xl border border-white/20 hover:bg-white/10 transition-colors">
+                <Instagram className="w-4 h-4 md:w-[18px] md:h-[18px] text-white" />
+              </a>
+              <a href="#" className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-[10px] md:rounded-xl border border-white/20 hover:bg-white/10 transition-colors">
+                <Linkedin className="w-4 h-4 md:w-[18px] md:h-[18px] text-white" />
+              </a>
             </div>
+          </div>
+
+          {/* Giant Text */}
+          <div className="w-full flex justify-center items-end px-4 pb-0 overflow-hidden relative pointer-events-none mt-16 md:mt-24">
+            <h2 className="text-[28vw] leading-[0.70] font-semibold tracking-tighter whitespace-nowrap flex items-start m-0 p-0 text-[#222222]">
+              Electras
+            </h2>
           </div>
         </footer>
       </motion.div>
