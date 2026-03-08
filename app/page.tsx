@@ -139,12 +139,12 @@ export default function Home() {
             }}
             className="flex justify-between items-start w-full px-6 py-1 md:px-12 md:py-1 z-10 border-b border-white/10"
           >
-            <div className="text-xl font-normal tracking-tight">
-              <img src="logo.svg" alt="Electras" className="w-10 h-10 mt-5" />
+            <div className="text-xl font-normal tracking-tight flex-shrink-0">
+              <img src="logo.svg" alt="Electras" className="w-14 h-14 md:w-16 md:h-16 mt-3 md:mt-2" />
             </div>
 
-            <div className="hidden md:flex flex-col py-4 text-sm text-gray-400 gap-1 text-right">
-              <span className="text-white font-normal">Department of Electronics and Computer Engineering</span>
+            <div className="flex flex-col py-4 text-[11px] sm:text-xs md:text-sm text-gray-400 gap-1 text-right max-w-[65%] md:max-w-none">
+              <span className="text-white font-normal leading-tight md:leading-normal">Department of Electronics and Computer Engineering</span>
               <span>SJCET, Palai</span>
             </div>
           </motion.nav>
@@ -192,25 +192,32 @@ export default function Home() {
               hidden: { y: 50, opacity: 0 },
               visible: { y: 0, opacity: 1, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } },
             }}
-            className="w-full flex justify-center items-end px-4 pb-0 overflow-hidden relative"
+            className="w-full flex justify-center items-end px-4 pb-12 md:pb-24 overflow-hidden relative"
           >
-            {/* Akihiko-style edge-to-edge typography 
-            <Image src="/logo.png" alt="Electras Logo" width={800} height={800} className="h-[35vw] w-auto object-contain shrink-0 -mr-[3vw] -mb-[4vw]" /> */}
+            {/* Akihiko-style edge-to-edge typography */}
             <h2 className="text-[26vw] leading-[0.80] font-semibold tracking-tighter text-white whitespace-nowrap flex items-start m-0 p-0">
               Electras
             </h2>
           </motion.div>
         </section>
 
+        {/* Premium Card-Stack Overlay Transition */}
+        <div className="w-full bg-black relative z-20 pt-8 mt-[-1px]">
+          {/* Subtle techy blue glow behind the overlap */}
+          <div className="absolute top-[28px] left-1/2 -translate-x-1/2 w-[80%] h-[10px] bg-blue-500 rounded-[100%] blur-xl opacity-60"></div>
+          {/* Solid white card with large rounded top edge sliding over the black */}
+          <div className="w-full h-12 md:h-24 bg-white rounded-t-[3rem] md:rounded-t-[6rem] relative z-10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]" />
+        </div>
+
         {/* About Section */}
-        <section className="w-full bg-white text-black py-20 px-6 md:px-12 lg:px-24">
-          <div className="max-w-7xl mx-auto flex flex-col pt-8">
+        <section className="w-full bg-white text-black pb-10 md:pb-20 px-4 md:px-12 lg:px-24 pt-0 relative z-20 mt-[-1px]">
+          <div className="max-w-7xl mx-auto flex flex-col pt-0 md:pt-8">
             <motion.h1 
                initial={{ y: 50, opacity: 0 }}
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8, ease: "easeOut" }}
-               className="text-[14vw] sm:text-[12vw] md:text-[150px] lg:text-[180px] font-semibold leading-none tracking-tighter mb-12 md:mb-20">
+               className="text-[20vw] sm:text-[15vw] md:text-[150px] lg:text-[180px] font-medium md:font-semibold leading-[0.85] tracking-tighter mb-10 md:mb-20 -ml-1 md:-ml-2 text-black mt-2">
               About us
             </motion.h1>
 
@@ -220,12 +227,12 @@ export default function Home() {
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
-              <div className="md:col-span-4">
-                <h2 className="text-3xl md:text-4xl tracking-tight font-normal">Electras</h2>
+               className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
+              <div className="col-span-4">
+                <h2 className="text-[17px] md:text-4xl tracking-tight font-normal text-black">Electras</h2>
               </div>
-              <div className="md:col-span-8">
-                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-3xl font-normal">
+              <div className="col-span-8">
+                <p className="text-[13px] md:text-lg text-gray-500 leading-[1.35] md:leading-relaxed max-w-3xl font-normal">
                   <strong className="text-black font-semibold">ELECTRAS is a dynamic student organization</strong> driving innovation and leadership in Electronics and Computer Science Engineering. Our vision is to build a powerhouse community of engineers who challenge limits, redefine technology, and shape a smarter, more connected future. At ELECTRAS, creativity meets expertise. <strong className="text-black font-semibold">We empower students to transform ideas into reality through hands-on projects, transformative workshops, impactful research, and collaborations with industry leaders.</strong> By bridging theory and practice, we prepare our members to become innovators who lead change and create lasting impact. Rooted in collaboration, curiosity, and excellence, ELECTRAS nurtures a new generation of problem-solvers ready to tackle global challenges with sustainable, socially responsible, and forward-thinking solutions. <strong className="text-black font-semibold">ELECTRAS — where ambition, innovation, and engineering excellence converge to define tomorrow.</strong>
                 </p>
               </div>
@@ -237,12 +244,12 @@ export default function Home() {
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
-              <div className="md:col-span-4">
-                <h2 className="text-3xl md:text-4xl tracking-tight leading-tight font-normal">Electronics &<br/>Computer<br/>Engineering</h2>
+               className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
+              <div className="col-span-4">
+                <h2 className="text-[16px] md:text-4xl tracking-tight leading-tight font-normal">Electronics &<br/>Computer<br/>Engineering</h2>
               </div>
-              <div className="md:col-span-8">
-                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-3xl font-normal">
+              <div className="col-span-8">
+                <p className="text-[13px] md:text-lg text-gray-500 leading-[1.35] md:leading-relaxed max-w-3xl font-normal">
                   Electronics and Computer Engineering is an integrated discipline that bridges the worlds of hardware and software, <strong className="text-black font-semibold">preparing students to meet the evolving demands of modern technology industries.</strong> By merging these two dynamic fields, the program offers a strong foundation in both electronics and computing, enabling students to develop versatile skills and a deep understanding of cutting-edge technologies. <strong className="text-black font-semibold">This cross-disciplinary approach empowers aspiring engineers</strong> to pursue diverse career paths across sectors—ranging from core electronics to software development and emerging tech innovations. The result is a new generation of multi-skilled, forward-thinking professionals equipped to design intelligent systems, drive innovation, and shape the future of technology with creativity and precision.
                 </p>
               </div>
@@ -254,12 +261,12 @@ export default function Home() {
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-               className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-12 md:mb-20">
-              <div className="md:col-span-6">
-                <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight">What we represent</h2>
+               className="grid grid-cols-12 gap-4 md:gap-16 mb-12 md:mb-20">
+              <div className="col-span-4 md:col-span-6">
+                <h2 className="text-[18px] md:text-5xl lg:text-5xl font-medium md:font-semibold tracking-tight leading-tight md:leading-normal">What we represent</h2>
               </div>
-              <div className="md:col-span-6 flex items-start md:items-end">
-                <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-xl font-normal">
+              <div className="col-span-8 md:col-span-6 flex items-start md:items-end">
+                <p className="text-[13px] md:text-lg text-gray-500 leading-[1.35] md:leading-relaxed max-w-xl font-normal">
                   We are committed to adhering to our vision and mission, which serve as guiding principles that illuminate our path. These core values not only ground us but also instill a profound sense of purpose in our endeavors, driving us to achieve excellence in all that we do.
                 </p>
               </div>

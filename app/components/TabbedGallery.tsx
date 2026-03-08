@@ -50,29 +50,36 @@ export function TabbedGallery({ items }: { items: SectionItem[] }) {
           })}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {activeContent?.images.map((image) => (
-              <motion.div
-                key={`${activeContent.id}-${image.id}`}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="relative aspect-[3/4] w-full rounded-md md:rounded-xl overflow-hidden bg-gray-100"
-              >
-                <Image
-                  src={image.src.trim()}
-                  alt={`${activeContent.title} ${image.id}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-out hover:scale-105"
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+        {/* Gallery Marquee */}
+        <div className="overflow-hidden w-full relative pb-4">
+          <div className="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused]">
+            <AnimatePresence mode="popLayout">
+              {[
+                ...(activeContent?.images || []),
+                ...(activeContent?.images || []),
+                ...(activeContent?.images || []),
+                ...(activeContent?.images || [])
+              ].map((image, index) => (
+                <motion.div
+                  key={`${activeContent?.id}-${image.id}-${index}`}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="relative aspect-[3/4] w-[280px] md:w-[320px] lg:w-[350px] flex-shrink-0 rounded-md md:rounded-xl overflow-hidden bg-gray-100"
+                >
+                  <Image
+                    src={image.src.trim()}
+                    alt={`${activeContent?.title} ${image.id}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
