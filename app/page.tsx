@@ -212,24 +212,24 @@ export default function Home() {
         {/* About Section */}
         <section className="w-full bg-white text-black pb-10 md:pb-20 px-4 md:px-12 lg:px-24 pt-0 relative z-20 mt-[-1px]">
           <div className="max-w-7xl mx-auto flex flex-col pt-0 md:pt-8">
-            <motion.h1 
-               initial={{ y: 50, opacity: 0 }}
-               whileInView={{ y: 0, opacity: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, ease: "easeOut" }}
-               className="text-[20vw] sm:text-[15vw] md:text-[150px] lg:text-[180px] font-medium md:font-semibold leading-[0.85] tracking-tighter mb-10 md:mb-20 -ml-1 md:-ml-2 text-black mt-2">
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-[20vw] xl:text-[22vw] md:text-[150px] lg:text-[180px] font-medium md:font-semibold leading-[0.85] tracking-tighter mb-10 md:mb-20 -ml-1 md:-ml-2 text-black mt-2">
               About us
             </motion.h1>
 
             {/* Electras */}
-            <motion.div 
-               initial={{ y: 50, opacity: 0 }}
-               whileInView={{ y: 0, opacity: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-               className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
               <div className="col-span-4">
-                <h2 className="text-[17px] md:text-4xl tracking-tight font-normal text-black">Electras</h2>
+                <h2 className="text-[17px] md:text-4xl tracking-tight font-semibold text-black">Electras</h2>
               </div>
               <div className="col-span-8">
                 <p className="text-[13px] md:text-lg text-gray-500 leading-[1.35] md:leading-relaxed max-w-3xl font-normal">
@@ -239,14 +239,14 @@ export default function Home() {
             </motion.div>
 
             {/* Electronics & Computer Engineering */}
-            <motion.div 
-               initial={{ y: 50, opacity: 0 }}
-               whileInView={{ y: 0, opacity: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-               className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="grid grid-cols-12 gap-4 md:gap-16 mb-10 md:mb-20">
               <div className="col-span-4">
-                <h2 className="text-[16px] md:text-4xl tracking-tight leading-tight font-normal">Electronics &<br/>Computer<br/>Engineering</h2>
+                <h2 className="text-[16px] md:text-4xl tracking-tight leading-tight font-semibold">Electronics &<br />Computer<br />Engineering</h2>
               </div>
               <div className="col-span-8">
                 <p className="text-[13px] md:text-lg text-gray-500 leading-[1.35] md:leading-relaxed max-w-3xl font-normal">
@@ -256,12 +256,12 @@ export default function Home() {
             </motion.div>
 
             {/* What we represent */}
-            <motion.div 
-               initial={{ y: 50, opacity: 0 }}
-               whileInView={{ y: 0, opacity: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-               className="grid grid-cols-12 gap-4 md:gap-16 mb-12 md:mb-20">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              className="grid grid-cols-12 gap-4 md:gap-16 mb-12 md:mb-20">
               <div className="col-span-4 md:col-span-6">
                 <h2 className="text-[18px] md:text-5xl lg:text-5xl font-medium md:font-semibold tracking-tight leading-tight md:leading-normal">What we represent</h2>
               </div>
@@ -273,22 +273,22 @@ export default function Home() {
             </motion.div>
 
             {/* Vision and Mission Cards with Cloud Background */}
-            <motion.div 
-               initial={{ y: 50, opacity: 0 }}
-               whileInView={{ y: 0, opacity: 1 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-               className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden min-h-[500px] flex items-center justify-center p-6 sm:p-10 md:p-16">
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden min-h-[500px] flex items-center justify-center p-6 sm:p-10 md:p-16">
               {/* Background Image */}
               <div className="absolute inset-0">
-                <Image 
-                  src="/clouds.png" 
-                  alt="Clouds background" 
-                  fill 
+                <Image
+                  src="/clouds.png"
+                  alt="Clouds background"
+                  fill
                   className="object-cover"
                 />
               </div>
-              
+
               {/* Cards Container */}
               <div className="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
                 {/* Vision Card */}
@@ -399,7 +399,7 @@ export default function Home() {
             <div className="mb-6 md:mb-8">
               <img src="/logo.svg" alt="Electras" className="w-12 h-12 md:w-14 md:h-14 opacity-90" />
             </div>
-            
+
             {/* Text */}
             <div className="max-w-md mb-8">
               <p className="text-[#a1a1aa] text-sm md:text-base leading-relaxed font-normal">
